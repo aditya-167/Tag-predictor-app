@@ -1,17 +1,29 @@
 # Tag recommendation using Word-embeddings and Weighted graph
 
-Application if deployed ![here](https://tag-recommender.herokuapp.com/)
+Application is deployed [here](https://tag-recommender.herokuapp.com/)
 
 ### Instructions:
 
-This application predicts related tags to a given input word, based on weighted graph generated from ![Data Science Stack Exchange](https://api.stackexchange.com/2.2/questions?page=1&pagesize=100&order=desc&sort=activity&site=datascience)
+This application predicts related tags to a given input word, based on weighted graph generated from [Data Science Stack Exchange](https://api.stackexchange.com/2.2/questions?page=1&pagesize=100&order=desc&sort=activity&site=datascience)
 Data Collection - REST API and extract tags from json format of requested url.
 
 ##### Consider the following example of extracted tags.
-[Row 1] k-means, clustering, python
-[Row 2] machine-learning, neural-network, python
-[Row 3] machine-learning, keras, neural-network, python
+-> k-means, clustering, python
+
+-> machine-learning, neural-network, python
+
+-> machine-learning, keras, neural-network, python
 ...
+
+##### App Homepage 
+
+###### Webapp homepage tag search bar with the graph constructed of words
+
+![here](https://github.com/aditya-167/Tag-predictor-app/blob/master/webapp/static/Images/Homepage.jpg)
+
+###### Webapp Search page with related tags as output for a given search word.
+
+![here](https://github.com/aditya-167/Tag-predictor-app/blob/master/webapp/static/Images/Search.jpg)
 
 From this list of tags, a Weighted Graph can be constructed where each tag in each row of data
 is related to other tags in the same row and the edge weight in the graph is incremented each
@@ -24,8 +36,6 @@ Another approach is Skip-gram architectue of word-embeddings. This has been impl
 1. Weighted_graph_tags_predict.ipybn contains `data extraction with REST API, graph construction with NetworkX and skip-gram architecture for tags prediction using pytorch`
 
 2. webapp/Data/ :- contains pickle file of graph constructed of similar words, test.txt and test2.txt contains all related raw words extracted from Data Science Stack Exchange.
-
-3. tagsenv :- environment for the project.
 
 ##### Instructions to run
 
